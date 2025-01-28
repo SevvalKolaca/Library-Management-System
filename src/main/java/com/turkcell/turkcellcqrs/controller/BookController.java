@@ -5,16 +5,18 @@ import com.turkcell.turkcellcqrs.application.book.command.create.CreateBookComma
 import com.turkcell.turkcellcqrs.application.book.command.create.CreatedBookResponse;
 import com.turkcell.turkcellcqrs.application.book.command.update.UpdateBookCommand;
 import com.turkcell.turkcellcqrs.application.book.command.update.UpdatedBookResponse;
+import com.turkcell.turkcellcqrs.core.web.BaseController;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/books")
-@RequiredArgsConstructor
-public class BookController {
+public class BookController extends BaseController {
 
-    private final Pipeline pipeline;
+    public BookController(Pipeline pipeline) {
+        super(pipeline);
+    }
 
     @PostMapping
     @ResponseStatus(code = HttpStatus.CREATED)
