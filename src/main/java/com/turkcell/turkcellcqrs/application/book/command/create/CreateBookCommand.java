@@ -16,13 +16,13 @@ public class CreateBookCommand implements Command<CreatedBookResponse>
     //@NotBlank //TODO: validasyon ekle!!!
     private String name;
 
-//    public String getName() {
-//        return name;
-//    }
-//
-//    public void setName(String name) {
-//        this.name = name;
-//    }
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     /* sistem tarafından tanınabilmesi için component olmalı*/
     @Component
